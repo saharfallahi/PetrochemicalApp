@@ -49,7 +49,7 @@ export default {
         sans: ["Vazir", ...fontFamily.sans],
       },
       container: {
-        center: true,
+        // center: true,
       },
       keyframes: {
         slideFromRight: {

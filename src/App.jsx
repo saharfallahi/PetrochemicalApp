@@ -2,7 +2,7 @@ import Hero from "./ui/Hero";
 
 function App() {
   return (
-    <div className="relative w-full">
+    <div className=" w-full">
       <Hero />
     </div>
   );

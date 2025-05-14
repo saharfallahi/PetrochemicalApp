@@ -39,7 +39,7 @@ function Hero() {
   };
 
   return (
-    <div className="relative w-full h-[800px] overflow-hidden">
+    <div className="relative w-full h-[1000px] overflow-hidden">
       {heroImages.map((image, index) => (
         <img
           key={index}
@@ -64,7 +64,7 @@ function Hero() {
             }`}
         />
       ))}
-      <div className="absolute inset-0 bg-black/30 z-20"></div>
+      <div className="absolute inset-0 bg-black/40 z-20"></div>
 
       {/* Navigation Arrows */}
       <button
@@ -96,7 +96,7 @@ function Hero() {
         ))}
       </div>
 
-      <div className="relative container mx-auto px-4 h-full z-30">
+      <div className="relative container mx-auto px-4 h-full z-30 ">
         <Navbar />
         <div className="flex flex-col items-center justify-center h-full text-secondary-0">
           <h1 className="text-4xl md:text-6xl font-bold mb-20">
