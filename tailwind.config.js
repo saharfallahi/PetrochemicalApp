@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import {fontFamily} from "tailwindcss/defaultTheme"
+import { fontFamily } from "tailwindcss/defaultTheme";
 // import tailwindFormPlugin from "@tailwindcss/forms"
 
 function withOpacity(variableName) {
@@ -12,11 +12,8 @@ function withOpacity(variableName) {
 }
 
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  darkMode: ['class', '[class="dark-mode"]'],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: ["class", '[class="dark-mode"]'],
   theme: {
     extend: {
       colors: {
@@ -48,19 +45,41 @@ export default {
         warning: withOpacity("--color-warning"),
         error: withOpacity("--color-error"),
       },
-      fontFamily:{
-        sans:["Vazir", ...fontFamily.sans]
+      fontFamily: {
+        sans: ["Vazir", ...fontFamily.sans],
       },
       container: {
         center: true,
-        padding: "1rem",
+      },
+      keyframes: {
+        slideFromRight: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        slideToLeft: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        slideFromLeft: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        slideToRight: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+      },
+      animation: {
+        slideFromRight: "slideFromRight 0.5s ease-in-out",
+        slideToLeft: "slideToLeft 0.5s ease-in-out",
+        slideFromLeft: "slideFromLeft 0.5s ease-in-out",
+        slideToRight: "slideToRight 0.5s ease-in-out",
       },
     },
   },
   plugins: [
-  //  tailwindFormPlugin({
-  //     strategy: 'class', // only generate classes
-  //   }),
+    //  tailwindFormPlugin({
+    //     strategy: 'class', // only generate classes
+    //   }),
   ],
-}
-
+};
