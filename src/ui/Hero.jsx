@@ -1,5 +1,5 @@
 import Navbar from "./Navbar";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const heroImages = [
@@ -20,26 +20,42 @@ const heroImages = [
 function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [slideDirection, setSlideDirection] = useState("right");
+  const [isPaused, setIsPaused] = useState(false);
 
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     setSlideDirection("right");
     setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-  };
+  }, []);
 
-  const prevImage = () => {
+  const prevImage = useCallback(() => {
     setSlideDirection("left");
     setCurrentImageIndex(
       (prev) => (prev - 1 + heroImages.length) % heroImages.length
     );
-  };
+  }, []);
 
   const goToImage = (index) => {
     setSlideDirection(index > currentImageIndex ? "right" : "left");
     setCurrentImageIndex(index);
   };
 
+  // Auto-slide effect
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      nextImage();
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isPaused, nextImage]);
+
   return (
-    <div className="relative w-full h-[1000px] overflow-hidden">
+    <div
+      className="relative w-full h-screen overflow-hidden"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       {heroImages.map((image, index) => (
         <img
           key={index}
@@ -69,17 +85,17 @@ function Hero() {
       {/* Navigation Arrows */}
       <button
         onClick={prevImage}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-2 rounded-full text-white z-30 backdrop-blur-sm transition-all"
+        className="absolute hidden md:block left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-2 rounded-full text-white z-40 backdrop-blur-sm transition-all "
         aria-label="Previous image"
       >
-        <FaChevronLeft size={24} />
+        <FaChevronLeft  className="w-4 h-4 md:w-8 md:h-8"/>
       </button>
       <button
         onClick={nextImage}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-2 rounded-full text-white z-30 backdrop-blur-sm transition-all"
+        className="absolute hidden md:block right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-2 rounded-full text-white z-40 backdrop-blur-sm transition-all"
         aria-label="Next image"
       >
-        <FaChevronRight size={24} />
+        <FaChevronRight className="w-4 h-4 md:w-8 md:h-8" />
       </button>
 
       {/* Image Indicators */}
@@ -96,17 +112,17 @@ function Hero() {
         ))}
       </div>
 
-      <div className="relative container mx-auto px-4 h-full z-30 ">
+      <div className="relative container px-4 h-full z-30">
         <Navbar />
         <div className="flex flex-col items-center justify-center h-full text-secondary-0">
-          <h1 className="text-4xl md:text-6xl font-bold mb-20">
+          <h1 className=" text-2xl md:text-4xl lg:text-6xl font-bold mb-20">
             پتروشیمی ایران زمین
           </h1>
           <div className="flex gap-4">
-            <button className="bg-primary-900 text-secondary-0 hover:bg-secondary-0 hover:text-primary-900 font-bold px-8 py-3 rounded-sm transition-colors">
+            <button className="btn btn--primary px-6 py-3 md:px-10 md:py-4 whitespace-nowrap">
               خدمات ما
             </button>
-            <button className="bg-secondary-0 text-primary-900 hover:bg-primary-900 hover:text-secondary-0 font-bold px-8 py-3 rounded-sm transition-colors">
+            <button className="btn btn--secondary px-6 py-3 md:px-10 md:py-4 whitespace-nowrap ">
               تماس با ما
             </button>
           </div>

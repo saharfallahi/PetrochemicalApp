@@ -49,7 +49,8 @@ export default {
         sans: ["Vazir", ...fontFamily.sans],
       },
       container: {
-        // center: true,
+        center: true,
+        padding: "1rem",
       },
       keyframes: {
         slideFromRight: {
@@ -75,6 +76,7 @@ export default {
         slideFromLeft: "slideFromLeft 0.5s ease-in-out",
         slideToRight: "slideToRight 0.5s ease-in-out",
       },
+      
     },
   },
   plugins: [
