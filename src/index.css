@@ -22,7 +22,7 @@
       --color-primary-200: 255, 207, 185;
       --color-primary-100: 255, 223, 208;
       --color-primary-50: 255, 239, 232;
-      --color-secondary-900: 17, 24, 39;
+      --color-secondary-900: 31, 33, 45;
       --color-secondary-800: 31, 41, 55;
       --color-secondary-700: 55, 65, 81;
       --color-secondary-600: 75, 85, 99;
@@ -38,6 +38,7 @@
       --color-error: 255, 71, 87;
       --color-red-500: 239, 68, 68;
       --color-red-300: 252, 165, 165;
+      --color-gradiant-900: 56, 39, 41;
     }
     &.dark-mode {
       --color-secondary-900: 249, 250, 251;
@@ -144,11 +145,15 @@ input[type="number"] {
 
 .outline-title {
 font-family: sans-serif;
-   color: white;
+   color: rgb(var(--color-secondary-0),1);
    text-shadow:
        1px 1px 0 rgb(var(--color-primary-900),1),
      -1px -1px 0 rgb(var(--color-primary-900),1), 
       1px -1px 0 rgb(var(--color-primary-900),1),
       -1px 1px 0 rgb(var(--color-primary-900),1);
      
+}
+
+.section{
+  margin-top: 5rem;
 }

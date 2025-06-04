@@ -3,7 +3,7 @@ import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
 
 function HeadSection({titleHead,descHead}) {
   return (
-    <div className="mt-20 mb-10">
+    <div className="section mb-10">
       <div className="flex items-center justify-center gap-2  ">
         <HiOutlineWrenchScrewdriver className="w-5 h-5 md:w-7 md:h-7 text-primary-900" />
         <span className="md:text-lg text-primary-900 ">

@@ -52,7 +52,7 @@ function Hero() {
 
   return (
     <div
-      className="relative w-full h-screen overflow-hidden"
+      className="relative w-full h-screen overflow-hidden hero-section"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -85,14 +85,14 @@ function Hero() {
       {/* Navigation Arrows */}
       <button
         onClick={prevImage}
-        className="absolute hidden md:block left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-2 rounded-full text-white z-40 backdrop-blur-sm transition-all "
+        className="absolute hidden md:block left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-2 rounded-full text-white z-30 backdrop-blur-sm transition-all "
         aria-label="Previous image"
       >
-        <FaChevronLeft  className="w-4 h-4 md:w-8 md:h-8"/>
+        <FaChevronLeft className="w-4 h-4 md:w-8 md:h-8" />
       </button>
       <button
         onClick={nextImage}
-        className="absolute hidden md:block right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-2 rounded-full text-white z-40 backdrop-blur-sm transition-all"
+        className="absolute hidden md:block right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-2 rounded-full text-white z-30 backdrop-blur-sm transition-all"
         aria-label="Next image"
       >
         <FaChevronRight className="w-4 h-4 md:w-8 md:h-8" />
@@ -113,7 +113,7 @@ function Hero() {
       </div>
 
       <div className="relative container px-4 h-full z-30">
-        <Navbar />
+      
         <div className="flex flex-col items-center justify-center h-full text-secondary-0">
           <h1 className=" text-2xl md:text-4xl lg:text-6xl font-bold mb-20">
             پتروشیمی ایران زمین

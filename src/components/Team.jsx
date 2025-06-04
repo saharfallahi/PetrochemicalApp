@@ -1,7 +1,6 @@
 import React from "react";
 import { FaShareAlt } from "react-icons/fa";
-import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
-import HeadSection from "./HeadSection";
+import HeadSection from "../ui/HeadSection";
 
 const teamMembers = [
   {
@@ -28,7 +27,7 @@ const teamMembers = [
 
 function Team() {
   return (
-    <div className="container mt-20">
+    <div className="container section">
       <HeadSection titleHead="تیم ما" descHead=" از متخصصین برجسته صنعت پتروشیمی"/>
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-between gap-x-4 gap-y-16 ">
         {teamMembers.map((member) => (

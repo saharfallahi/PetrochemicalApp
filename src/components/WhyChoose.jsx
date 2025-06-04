@@ -3,7 +3,7 @@ import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
 
 function WhyChoose() {
   return (
-    <div className="relative w-full bg-secondary-100  mt-20">
+    <div className="relative w-full bg-secondary-100  section">
       <div className="container pt-20 pb-20 h-full flex flex-col gap-y-8 md:flex-row items-center justify-between">
         <div className="md:w-2/5 ">
           <img

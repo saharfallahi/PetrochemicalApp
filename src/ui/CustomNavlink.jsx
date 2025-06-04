@@ -15,6 +15,7 @@ function CustomNavlink({ children, to }) {
             ? `${navlinkClass} text-primary-900`
             : `${navlinkClass} text-secondary-0`
         }
+        end
       >
         {children}
       </NavLink>
