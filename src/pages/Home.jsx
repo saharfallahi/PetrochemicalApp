@@ -8,7 +8,6 @@ import WhyChoose from "../components/WhyChoose";
 function Home() {
   return (
     <div className=" w-full">
-      <Hero />
       <HeadSection
         titleHead="خدماتی که ما ارائه می‌دهیم"
         descHead="ما بهترین کیفیت را ارائه می‌دهیم"
