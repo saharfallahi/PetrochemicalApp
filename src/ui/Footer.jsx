@@ -50,20 +50,20 @@ function Footer() {
               </span>
               <div className="text-sm flex flex-col justify-between gap-y-4">
                 <div className="flex items-center  gap-x-2">
-                  <div className="bg-primary-900 p-2 lg:p-3 rounded-full ">
-                    <FaLocationDot className="w-4 h-4 lg:w-5 lg:h-5" />
+                  <div className="icon--container ">
+                    <FaLocationDot className="icon" />
                   </div>
                   <span>تهران-جردن-خیابان شرقی-کوچه دوم-پلاک ۱</span>
                 </div>
                 <div className="flex items-center gap-x-2">
-                  <div className="bg-primary-900 p-2 lg:p-3 rounded-full">
-                    <IoIosMail className="w-4 h-4 lg:w-5 lg:h-5" />
+                  <div className="icon--container">
+                    <IoIosMail className="icon" />
                   </div>
                   <span>info@petroIR</span>
                 </div>
                 <div className="flex items-center gap-x-2">
-                  <div className="bg-primary-900 p-2 lg:p-3 rounded-full ">
-                    <BiSolidPhoneCall className="w-4 h-4 lg:w-5 lg:h-5" />
+                  <div className="icon--container ">
+                    <BiSolidPhoneCall className="icon" />
                   </div>
                   <span>۰۲۱-۲۳۴۵۶۷۸</span>
                 </div>

@@ -61,7 +61,7 @@
 
 @layer components {
   .textField__input {
-    @apply w-full text-sm md:text-base py-3 px-4 rounded-xl text-secondary-900 border border-secondary-100 bg-secondary-100 hover:border-primary-500 focus:border-primary-500 focus:bg-secondary-0 transition-all duration-300 ease-out focus:shadow-lg focus:shadow-primary-200 dark:focus:shadow-secondary-200;
+    @apply text-sm md:text-base py-3 px-4 rounded-md text-secondary-900 border border-secondary-100 bg-secondary-0 hover:border-primary-200 focus:border-primary-300 transition-all duration-300 ease-out focus:shadow-sm focus:shadow-primary-200 dark:focus:shadow-secondary-200;
   }
   .btn {
     @apply px-4 py-2 md:px-6 md:py-3 text-sm md:text-base font-bold transition-all duration-300;
@@ -92,6 +92,12 @@
   }
   .badge--danger {
     @apply bg-red-500 text-white;
+  }
+  .icon{
+    @apply w-4 h-4 lg:w-5 lg:h-5 text-secondary-50;
+  }
+  .icon--container{
+    @apply bg-primary-900 p-2 lg:p-3 rounded-full;
   }
 }
 
