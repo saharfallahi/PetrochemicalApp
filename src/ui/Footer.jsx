@@ -19,15 +19,15 @@ function Footer() {
               استفاده از طراحان گرافیک است
             </div>
             <div className="flex gap-x-2">
-              <div className="bg-secondary-100 p-2 rounded-full">
+              <a href="#" className="bg-secondary-100 icon--container">
                 <FaLinkedinIn className="w-4 h-4 md:w-5 md:h-5 text-secondary-900" />
-              </div>
-              <div className="bg-secondary-100 p-2 rounded-full">
+              </a>
+              <a href="#" className="bg-secondary-100 icon--container">
                 <FaFacebookF className="w-4 h-4 md:w-5 md:h-5 text-secondary-900" />
-              </div>
-              <div className="bg-secondary-100 p-2 rounded-full">
+              </a>
+              <a href="#"  className="bg-secondary-100 icon--container">
                 <RiInstagramFill className="w-4 h-4 md:w-5 md:h-5 text-secondary-900" />
-              </div>
+              </a>
             </div>
           </div>
 

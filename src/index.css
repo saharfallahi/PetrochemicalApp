@@ -75,29 +75,20 @@
   .btn--outline {
     @apply border-2 border-primary-900;
   }
-  .btn--danger {
-    @apply border border-rose-700 text-rose-700;
-  }
   .badge {
-    @apply inline-block whitespace-nowrap rounded-xl px-2 py-0.5;
+    @apply inline-block whitespace-nowrap rounded-xl px-2 py-0.5 text-sm;
   }
   .badge--primary {
-    @apply bg-primary-900 text-white;
+    @apply bg-primary-900 text-secondary-0;
   }
   .badge--secondary {
     @apply bg-secondary-200 text-secondary-600;
-  }
-  .badge--success {
-    @apply bg-green-500 text-white;
-  }
-  .badge--danger {
-    @apply bg-red-500 text-white;
   }
   .icon{
     @apply w-4 h-4 lg:w-5 lg:h-5 text-secondary-50;
   }
   .icon--container{
-    @apply bg-primary-900 p-2 lg:p-3 rounded-full;
+    @apply bg-primary-900 p-2  rounded-full;
   }
 }
 
