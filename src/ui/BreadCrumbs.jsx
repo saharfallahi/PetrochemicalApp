@@ -1,9 +1,12 @@
 import { FaArrowLeft } from "react-icons/fa6";
 import { IoIosArrowBack } from "react-icons/io";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
+import { usePosts } from "../context/PostsProvider";
 
 export default function Breadcrumbs({ links = [] }) {
   const location = useLocation();
+  const { postId } = useParams();
+  const { getPostById } = usePosts();
   const currentPath = location.pathname;
 
   // Find the matching link for current path
@@ -25,14 +28,36 @@ export default function Breadcrumbs({ links = [] }) {
 
     // Build path progressively and find matching links
     let currentPathBuilder = "";
-    pathSegments.forEach((segment) => {
+    pathSegments.forEach((segment, index) => {
       currentPathBuilder += `/${segment}`;
       const matchingLink = findMatchingLink(currentPathBuilder);
+
       if (matchingLink) {
-        breadcrumbs.push({
-          ...matchingLink,
-          active: currentPathBuilder === currentPath,
-        });
+        // If we're on a post page and this is the posts segment
+        if (
+          segment === "posts" &&
+          postId &&
+          pathSegments[index + 1] === postId
+        ) {
+          breadcrumbs.push({
+            ...matchingLink,
+            active: false,
+          });
+          // Add the post title as the next breadcrumb
+          const post = getPostById(postId);
+          if (post) {
+            breadcrumbs.push({
+              name: post.title,
+              to: currentPathBuilder + `/${postId}`,
+              active: true,
+            });
+          }
+        } else {
+          breadcrumbs.push({
+            ...matchingLink,
+            active: currentPathBuilder === currentPath,
+          });
+        }
       }
     });
 
@@ -42,8 +67,8 @@ export default function Breadcrumbs({ links = [] }) {
   const breadcrumbs = generateBreadcrumbs();
 
   return (
-    <nav aria-label="Breadcrumb" className="py-2">
-      <ol className="flex flex-wrap items-center text-sm">
+    <nav aria-label="Breadcrumb" className="py-2 ">
+      <ol className="flex items-center text-sm whitespace-nowrap">
         {breadcrumbs.map((breadcrumb) => (
           <li
             key={breadcrumb.to}
@@ -62,7 +87,10 @@ export default function Breadcrumbs({ links = [] }) {
                 >
                   {breadcrumb.name}
                 </Link>
-                <span className="mx-2 text-secondary-100"> <IoIosArrowBack /> </span>
+                <span className="mx-2 text-secondary-100">
+                  {" "}
+                  <IoIosArrowBack />{" "}
+                </span>
               </>
             )}
           </li>

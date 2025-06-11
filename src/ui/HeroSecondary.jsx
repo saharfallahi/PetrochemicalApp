@@ -2,7 +2,7 @@ import Breadcrumbs from "./BreadCrumbs";
 
 const links = [
   { name: "صفحه اصلی", to: "/" },
-  { name: "وبلاگ", to: "/blog" },
+  { name: "وبلاگ", to: "/posts" },
   { name: "خدمات", to: "/services" },
   { name: "درباره ما", to: "/about" },
   { name: "تماس با ما", to: "/contact" },
@@ -26,7 +26,6 @@ function HeroSecondary({ pathname }) {
           </h1>
           <div className="absolute bg-primary-900 px-4 py-1  rounded-lg  bottom-0 left-1/2 -translate-x-1/2 flex  justify-center items-center">
             <Breadcrumbs links={links} />
-
           </div>
         </div>
       </div>
