@@ -67,8 +67,8 @@ export default function Breadcrumbs({ links = [] }) {
   const breadcrumbs = generateBreadcrumbs();
 
   return (
-    <nav aria-label="Breadcrumb" className="py-2 ">
-      <ol className="flex items-center text-sm whitespace-nowrap">
+    <nav aria-label="Breadcrumb" className="py-1 md:py-2">
+      <ol className="flex items-center text-xs md:text-sm whitespace-nowrap">
         {breadcrumbs.map((breadcrumb) => (
           <li
             key={breadcrumb.to}
@@ -76,18 +76,18 @@ export default function Breadcrumbs({ links = [] }) {
             className="flex items-center"
           >
             {breadcrumb.active ? (
-              <span className="text-primary-100 font-bold text-sm ">
+              <span className="text-primary-100 font-bold text-xs md:text-sm ">
                 {breadcrumb.name}
               </span>
             ) : (
               <>
                 <Link
                   to={breadcrumb.to}
-                  className=" text-sm  font-bold text-primary-100 hover:text-primary-300 transition-colors"
+                  className="text-xs md:text-sm font-bold text-primary-100 hover:text-primary-300 transition-colors"
                 >
                   {breadcrumb.name}
                 </Link>
-                <span className="mx-2 text-secondary-100">
+                <span className="mx-1 md:mx-2 text-secondary-100">
                   {" "}
                   <IoIosArrowBack />{" "}
                 </span>

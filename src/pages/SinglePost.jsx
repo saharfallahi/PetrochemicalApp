@@ -1,84 +1,40 @@
 import { useEffect } from "react";
-import { FaTelegramPlane, FaTwitter } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { usePosts } from "../context/PostsProvider";
+import HeroSecondary from "../ui/HeroSecondary";
+import RecentPosts from "../ui/RecentPosts";
+import Tags from "../ui/Tags";
 import LoadingSpinner from "../ui/LoadingSpinner";
+import CommentForm from "../ui/CommentForm";
+import SearchBar from "../ui/SearchBar";
+import SocialIcons from "../ui/SocialIcons";
 
 export default function SinglePost() {
   const { postId } = useParams();
   const navigate = useNavigate();
-  const { isLoading, getRecentPosts, getPostById } = usePosts();
-
+  const { getPostById } = usePosts();
   const post = getPostById(postId);
-  const recentPosts = post ? getRecentPosts(post.id) : [];
 
-  // If no post data is available, redirect to posts page
   useEffect(() => {
-    if (!post && !isLoading) {
+    if (!post) {
       navigate("/posts");
     }
-  }, [post, isLoading, navigate]);
-
-  if (isLoading) {
-    return (
-      <div className="container section flex justify-center items-center min-h-[50vh]">
-        <LoadingSpinner />
-      </div>
-    );
-  }
+  }, [post, navigate]);
 
   if (!post) {
-    return null;
+    return <LoadingSpinner />;
   }
 
   return (
     <div className="container mx-auto py-8 flex flex-col-reverse lg:flex-row gap-8">
       {/* Sidebar */}
       <aside className="w-full lg:w-80 flex-shrink-0 flex flex-col gap-6">
-        {/* Search */}
-        <div className="bg-secondary-100 rounded-xl shadow p-4 mb-4">
-          <input
-            type="text"
-            placeholder="جستجو..."
-            className="w-full border rounded p-2"
-          />
-        </div>
-        {/* Recent Posts */}
+        <SearchBar />
         <div className="bg-secondary-100 rounded-xl shadow p-4">
           <h3 className="font-bold mb-2">نوشته های اخیر</h3>
-          <ul className="space-y-2">
-            {recentPosts.map((p) => (
-              <li key={p.id}>
-                <Link
-                  to={`/posts/${p.id}`}
-                  className="flex items-center gap-2 hover:bg-secondary-200 p-2 rounded-lg transition-colors"
-                >
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    className="w-12 h-12 rounded-lg object-cover"
-                  />
-                  <div className="flex flex-col">
-                    <span className="text-xs font-bold">{p.title}</span>
-                    <span className="text-xs text-secondary-400">{p.date}</span>
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <RecentPosts currentPostId={postId} className="text-secondary-900"/>
         </div>
-        {/* Tags */}
-        <div className="bg-secondary-100 rounded-xl shadow p-4">
-          <h3 className="font-bold mb-2">برچسب ها</h3>
-          <div className="flex flex-wrap gap-2">
-            {post.tags.map((tag, idx) => (
-              <span key={idx} className="badge badge--primary">
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
+        <Tags tags={post.tags} />
       </aside>
 
       {/* Main Content */}
@@ -96,40 +52,8 @@ export default function SinglePost() {
           <span>مدیر سایت</span>
           <span>{post.date}</span>
         </div>
-        {/* Social & meta */}
-        <div className="flex items-center gap-2 mt-4">
-          <span className="text-sm text-secondary-500">اشتراک گذاری :</span>
-          <a href="#" className="icon--container">
-            <FaTwitter className="icon" />
-          </a>
-          <a href="#" className="icon--container">
-            <RiInstagramFill className="icon" />
-          </a>
-          <a href="#" className="icon--container">
-            <FaTelegramPlane className="icon" />
-          </a>
-        </div>
-        {/* Comment Form */}
-        <div className="mt-8">
-          <h2 className="font-bold mb-2">نوشتن دیدگاه</h2>
-          <p className="text-xs text-gray-400 mb-2">
-            نشانی ایمیل شما منتشر نخواهد شد.
-          </p>
-          <form className="space-y-3">
-            <input
-              type="text"
-              placeholder="نام"
-              className="w-full border rounded p-2"
-            />
-            <textarea
-              placeholder="دیدگاه"
-              className="w-full border rounded p-2 h-24 resize-none"
-            ></textarea>
-            <button type="submit" className="btn btn--primary btn--outline">
-              ارسال دیدگاه
-            </button>
-          </form>
-        </div>
+        <SocialIcons />
+        <CommentForm />
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import { createContext, useContext, useMemo } from "react";
 import useFetch from "../hooks/useFetch";
 
 const PostsContext = createContext();
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://understood-vagabond-limit.glitch.me";
 
 function PostsProvider({ children }) {
   const {

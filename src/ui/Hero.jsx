@@ -1,6 +1,6 @@
-
 import { useState, useEffect, useCallback } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const heroImages = [
   {
@@ -113,17 +113,16 @@ function Hero() {
       </div>
 
       <div className="relative container px-4 h-full z-30">
-      
         <div className="flex flex-col items-center justify-center h-full text-secondary-0">
           <h1 className=" text-2xl md:text-4xl lg:text-6xl font-bold mb-20">
             پتروشیمی ایران زمین
           </h1>
           <div className="flex gap-4">
             <button className="btn btn--primary px-6 py-3 md:px-10 md:py-4 whitespace-nowrap">
-              خدمات ما
+              <Link to="/services">خدمات ما</Link>
             </button>
             <button className="btn btn--secondary px-6 py-3 md:px-10 md:py-4 whitespace-nowrap ">
-              تماس با ما
+              <Link to="/contact"> تماس با ما</Link>
             </button>
           </div>
         </div>
