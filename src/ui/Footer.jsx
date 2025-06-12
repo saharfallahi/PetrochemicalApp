@@ -44,7 +44,7 @@ function Footer() {
               <div className="text-sm flex flex-col gap-y-4">
                 <NavLink to="/">صفحه اصلی</NavLink>
                 <NavLink to="/about">درباره ما</NavLink>
-                <NavLink to="/blog">وبلاگ</NavLink>
+                <NavLink to="/posts">وبلاگ</NavLink>
                 <NavLink to="/services">خدمات</NavLink>
                 <NavLink to="/contact">تماس با ما</NavLink>
               </div>
