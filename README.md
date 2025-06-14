@@ -1,12 +1,51 @@
-# React + Vite
+# Petrochemical App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Petrochemical Application Project is a Industrial Application for petrochemical introduction that is implemented using the React library and Tailwind CSS framework . This project is implemented responsively and uses high-quality, accurate, and optimized images. To implement the backend of this project, JSON Server is used and blog post information is placed in the db.json file.
 
-Currently, two official plugins are available:
+## Screenshots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Screenshot (54)](https://github.com/user-attachments/assets/aa9f00a3-335d-41ac-9e1c-8e9702cd97bc)
 
-## Expanding the ESLint configuration
+![Screenshot (55)](https://github.com/user-attachments/assets/3abb2aa3-7154-4584-9b0a-c6c14f8db73f)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Authors
+
+- [@saharfallahi](https://www.github.com/saharfallahi)
+
+## Logo
+
+![gas-icon](https://github.com/user-attachments/assets/845ea31e-deaa-47a3-9253-70f7d17703ef)
+
+## Demo
+
+https://petrochemical-app.vercel.app/
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/saharfallahi/PetrochemicalApp.git
+```
+
+Go to the project directory
+
+```bash
+  cd PetrochemicalApp
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+```bash
+  npm run dev
+```
+
+## 🔗 Links
+
+linkedin : www.linkedin.com/in/sahar-fallahi
+
+email : s.fallahi.66@gmail.com
