@@ -14,7 +14,7 @@ function Cards({items}) {
               />
               <div>
                 <h3 className="text-secondary-800 text-base md:text-lg font-bold mb-2">{item.h3}</h3>
-                <p className="text-sm md:text-base text-secondary-600">{item.p}</p>
+                <p className="text-sm md:text-base text-secondary-600 truncate">{item.p}</p>
               </div>
               <div className="flex items-center justify-center">
                 <button className="btn btn--primary btn--outline">

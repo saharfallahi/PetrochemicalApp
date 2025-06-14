@@ -1,4 +1,3 @@
-import React from "react";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaFacebookF, FaLocationDot } from "react-icons/fa6";
@@ -45,7 +44,7 @@ function Footer() {
                 <NavLink to="/">صفحه اصلی</NavLink>
                 <NavLink to="/about">درباره ما</NavLink>
                 <NavLink to="/posts">وبلاگ</NavLink>
-                <NavLink to="/services">خدمات</NavLink>
+                <NavLink to="/products">محصولات</NavLink>
                 <NavLink to="/contact">تماس با ما</NavLink>
               </div>
             </div>

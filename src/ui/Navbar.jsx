@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 const links = [
   { name: "صفحه اصلی", to: "/" },
   { name: "وبلاگ", to: "/posts" },
-  { name: "خدمات", to: "/services" },
+  { name: "محصولات", to: "/products" },
   { name: "درباره ما", to: "/about" },
   { name: "تماس با ما", to: "/contact" },
 ];

@@ -4,10 +4,10 @@ import Blog from "./pages/Blog";
 import SinglePost from "./pages/SinglePost";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
-import Services from "./pages/Services";
 import AppLayout from "./ui/AppLayout";
 import { PostsProvider } from "./context/PostsProvider";
 import { Toaster } from "react-hot-toast";
+import Products from "./pages/Products";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
             <Route path="/posts/:postId" element={<SinglePost />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
+            <Route path="/products" element={<Products/>} />
           </Route>
         </Routes>
       </PostsProvider>

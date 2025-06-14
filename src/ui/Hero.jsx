@@ -119,7 +119,7 @@ function Hero() {
           </h1>
           <div className="flex gap-4">
             <button className="btn btn--primary px-6 py-3 md:px-10 md:py-4 whitespace-nowrap">
-              <Link to="/services">خدمات ما</Link>
+              <Link to="/products">محصولات ما</Link>
             </button>
             <button className="btn btn--secondary px-6 py-3 md:px-10 md:py-4 whitespace-nowrap ">
               <Link to="/contact"> تماس با ما</Link>

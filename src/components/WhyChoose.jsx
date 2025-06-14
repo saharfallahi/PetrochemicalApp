@@ -1,5 +1,6 @@
 import React from "react";
 import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 
 function WhyChoose() {
   return (
@@ -47,11 +48,12 @@ function WhyChoose() {
             </li>
           </ul>
           <div className="flex gap-4">
-            <button className="btn btn--primary btn--outline">
-              بیشتر بدانید
+            <button className="btn btn--secondary px-6 py-3 md:px-10 md:py-4 whitespace-nowrap ">
+              <Link to="/about">بیشتر بدانید</Link>
             </button>
-            <button className="btn btn--secondary btn--outline">
-              تماس با ما
+
+            <button className="btn btn--secondary px-6 py-3 md:px-10 md:py-4 whitespace-nowrap ">
+              <Link to="/contact"> تماس با ما</Link>
             </button>
           </div>
         </div>
