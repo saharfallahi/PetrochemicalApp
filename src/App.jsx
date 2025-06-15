@@ -8,23 +8,29 @@ import AppLayout from "./ui/AppLayout";
 import { PostsProvider } from "./context/PostsProvider";
 import { Toaster } from "react-hot-toast";
 import Products from "./pages/Products";
+import { ItemsProvider } from "./context/ItemsProvider";
+import SingleItem from "./pages/SingleItem";
 
 function App() {
   return (
     <div className="w-full">
-      <PostsProvider>
-        <Toaster />
-        <Routes>
-          <Route element={<AppLayout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/posts" element={<Blog />} />
-            <Route path="/posts/:postId" element={<SinglePost />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/products" element={<Products/>} />
-          </Route>
-        </Routes>
-      </PostsProvider>
+      <ItemsProvider>
+        <PostsProvider>
+          <Toaster />
+          <Routes>
+            <Route element={<AppLayout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/posts" element={<Blog />} />
+              <Route path="/posts/:postId" element={<SinglePost />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/:productId" element={<SingleItem />} />
+              <Route path="/services/:serviceId" element={<SingleItem />} />
+            </Route>
+          </Routes>
+        </PostsProvider>
+      </ItemsProvider>
     </div>
   );
 }

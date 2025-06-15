@@ -33,12 +33,9 @@ function Blog() {
               </p>
               <div className="flex justify-between items-center">
                 <span className="text-xs text-primary-900">{post.date}</span>
-                <Link
-                  to={`/posts/${post.id}`}
-                  className="btn btn--primary btn--outline"
-                >
-                  مشاهده
-                </Link>
+                <button className="btn btn--primary btn--outline">
+                  <Link to={`/posts/${post.id}`}>مشاهده</Link>
+                </button>
               </div>
             </div>
           </div>
