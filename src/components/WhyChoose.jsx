@@ -48,13 +48,17 @@ function WhyChoose() {
             </li>
           </ul>
           <div className="flex gap-4">
-            <button className="btn btn--secondary px-6 py-3 md:px-10 md:py-4 whitespace-nowrap ">
-              <Link to="/about">بیشتر بدانید</Link>
-            </button>
+            <Link to="/about">
+              <button className="btn btn--secondary px-6 py-3 md:px-10 md:py-4 whitespace-nowrap ">
+                بیشتر بدانید
+              </button>
+            </Link>
 
-            <button className="btn btn--secondary px-6 py-3 md:px-10 md:py-4 whitespace-nowrap ">
-              <Link to="/contact"> تماس با ما</Link>
-            </button>
+            <Link to="/contact">
+              <button className="btn btn--secondary px-6 py-3 md:px-10 md:py-4 whitespace-nowrap ">
+                تماس با ما
+              </button>
+            </Link>
           </div>
         </div>
       </div>

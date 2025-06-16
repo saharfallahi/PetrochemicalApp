@@ -64,7 +64,7 @@
     @apply text-sm md:text-base py-3 px-4 rounded-md text-secondary-900 border border-secondary-100 bg-secondary-0 hover:border-primary-200 focus:border-primary-300 transition-all duration-300 ease-out focus:shadow-sm focus:shadow-primary-200 dark:focus:shadow-secondary-200;
   }
   .btn {
-    @apply px-4 py-2 md:px-6 md:py-3 text-sm md:text-base font-bold transition-all duration-300;
+    @apply px-4 py-2 md:px-6 md:py-3 text-sm md:text-base font-bold transition-all duration-300 block;
   }
   .btn--primary {
     @apply bg-primary-900 text-secondary-0 hover:bg-secondary-0 hover:text-primary-900 rounded-md;

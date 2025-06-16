@@ -4,6 +4,7 @@ const links = [
   { name: "صفحه اصلی", to: "/" },
   { name: "وبلاگ", to: "/posts" },
   { name: "محصولات", to: "/products" },
+  { name: "خدمات", to: "/services" },
   { name: "درباره ما", to: "/about" },
   { name: "تماس با ما", to: "/contact" },
 ];

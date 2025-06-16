@@ -10,16 +10,16 @@ export default function SingleItem() {
   const type = params.productId ? "products" : "services";
   const itemId = params.productId || params.serviceId;
   const navigate = useNavigate();
-  const { getItemById } = useItems();
+  const { getItemById, isLoading } = useItems();
   const item = getItemById(itemId, type);
 
   useEffect(() => {
-    if (!item) {
+    if (!isLoading && !item) {
       navigate(`/${type}`);
     }
-  }, [item, navigate, type]);
+  }, [item, navigate, type, isLoading]);
 
-  if (!item) {
+  if (isLoading) {
     return <LoadingSpinner />;
   }
 

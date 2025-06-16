@@ -10,6 +10,7 @@ import { Toaster } from "react-hot-toast";
 import Products from "./pages/Products";
 import { ItemsProvider } from "./context/ItemsProvider";
 import SingleItem from "./pages/SingleItem";
+import Services from "./pages/Services";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/products" element={<Products />} />
               <Route path="/products/:productId" element={<SingleItem />} />
+              <Route path="/services" element={<Services />} />
               <Route path="/services/:serviceId" element={<SingleItem />} />
             </Route>
           </Routes>

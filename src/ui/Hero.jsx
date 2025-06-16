@@ -118,12 +118,17 @@ function Hero() {
             پتروشیمی ایران زمین
           </h1>
           <div className="flex gap-4">
-            <button className="btn btn--primary px-6 py-3 md:px-10 md:py-4 whitespace-nowrap">
-              <Link to="/products">محصولات ما</Link>
-            </button>
-            <button className="btn btn--secondary px-6 py-3 md:px-10 md:py-4 whitespace-nowrap ">
-              <Link to="/contact"> تماس با ما</Link>
-            </button>
+            <Link to="/services">
+              <button className="btn btn--primary px-6 py-3 md:px-10 md:py-4 whitespace-nowrap">
+                خدمات ما
+              </button>
+            </Link>
+
+            <Link to="/contact">
+              <button className="btn btn--secondary px-6 py-3 md:px-10 md:py-4 whitespace-nowrap ">
+                تماس با ما
+              </button>
+            </Link>
           </div>
         </div>
       </div>
