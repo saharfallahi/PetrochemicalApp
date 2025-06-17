@@ -30,8 +30,8 @@ export default function SinglePost() {
       <aside className="w-full lg:w-80 flex-shrink-0 flex flex-col gap-6">
         <SearchBar />
         <div className="bg-secondary-100 rounded-xl shadow p-4">
-          <h3 className="font-bold mb-2">نوشته های اخیر</h3>
-          <RecentPosts currentPostId={postId} className="text-secondary-900"/>
+          <h3 className="font-bold mb-4">نوشته های اخیر</h3>
+          <RecentPosts currentPostId={postId} className="text-secondary-900" />
         </div>
         <Tags tags={post.tags} />
       </aside>

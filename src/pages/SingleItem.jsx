@@ -1,17 +1,24 @@
 import { useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useItems } from "../context/ItemsProvider";
 import LoadingSpinner from "../ui/LoadingSpinner";
 import SearchBar from "../ui/SearchBar";
 import SocialIcons from "../ui/SocialIcons";
+import OtherItems from "../ui/OtherItems";
 
 export default function SingleItem() {
   const params = useParams();
   const type = params.productId ? "products" : "services";
   const itemId = params.productId || params.serviceId;
   const navigate = useNavigate();
-  const { getItemById, isLoading } = useItems();
+  const { getItemById, isLoading, products, services } = useItems();
   const item = getItemById(itemId, type);
+
+  // Get other items of the same type, excluding the current item
+  const otherItems =
+    type === "products"
+      ? products.filter((product) => product.id !== itemId)
+      : services.filter((service) => service.id !== itemId);
 
   useEffect(() => {
     if (!isLoading && !item) {
@@ -29,9 +36,10 @@ export default function SingleItem() {
       <aside className="w-full lg:w-80 flex-shrink-0 flex flex-col gap-6">
         <SearchBar />
         <div className="bg-secondary-100 rounded-xl shadow p-4">
-          <h3 className="font-bold mb-2">
+          <h3 className="font-bold mb-4">
             {type === "products" ? "محصولات دیگر" : "خدمات دیگر"}
           </h3>
+          <OtherItems otherItems={otherItems} type={type} />
         </div>
       </aside>
 

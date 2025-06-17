@@ -13,7 +13,7 @@ function HeroSecondary({ pathname }) {
   return (
     <div className="relative w-full h-[60vh] overflow-hidden hero-section">
       <img
-        src="./petro-sunrise.jpg"
+        src="/petro-sunrise.jpg"
         alt="Petrochemical Sunrise"
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out"
       />

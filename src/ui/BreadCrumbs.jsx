@@ -1,13 +1,14 @@
-import { FaArrowLeft } from "react-icons/fa6";
 import { IoIosArrowBack } from "react-icons/io";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { usePosts } from "../context/PostsProvider";
+import { useItems } from "../context/ItemsProvider";
 
 export default function Breadcrumbs({ links = [] }) {
   const location = useLocation();
-  const { postId } = useParams();
+  const { postId, productId, serviceId } = useParams();
   const { getPostById } = usePosts();
   const currentPath = location.pathname;
+  const { getItemById } = useItems();
 
   // Find the matching link for current path
   const findMatchingLink = (path) => {
@@ -49,6 +50,46 @@ export default function Breadcrumbs({ links = [] }) {
             breadcrumbs.push({
               name: post.title,
               to: currentPathBuilder + `/${postId}`,
+              active: true,
+            });
+          }
+        }
+        // If we're on a product page and this is the products segment
+        else if (
+          segment === "products" &&
+          productId &&
+          pathSegments[index + 1] === productId
+        ) {
+          breadcrumbs.push({
+            ...matchingLink,
+            active: false,
+          });
+          // Add the product title as the next breadcrumb
+          const product = getItemById(productId, "products");
+          if (product) {
+            breadcrumbs.push({
+              name: product.h3,
+              to: currentPathBuilder + `/${productId}`,
+              active: true,
+            });
+          }
+        }
+        // If we're on a service page and this is the services segment
+        else if (
+          segment === "services" &&
+          serviceId &&
+          pathSegments[index + 1] === serviceId
+        ) {
+          breadcrumbs.push({
+            ...matchingLink,
+            active: false,
+          });
+          // Add the service title as the next breadcrumb
+          const service = getItemById(serviceId, "services");
+          if (service) {
+            breadcrumbs.push({
+              name: service.h3,
+              to: currentPathBuilder + `/${serviceId}`,
               active: true,
             });
           }
