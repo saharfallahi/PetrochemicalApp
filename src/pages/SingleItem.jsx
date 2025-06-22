@@ -5,6 +5,7 @@ import LoadingSpinner from "../ui/LoadingSpinner";
 import SearchBar from "../ui/SearchBar";
 import SocialIcons from "../ui/SocialIcons";
 import OtherItems from "../ui/OtherItems";
+import ServiceContent from "../ui/ServiceContent";
 
 export default function SingleItem() {
   const params = useParams();
@@ -45,14 +46,14 @@ export default function SingleItem() {
 
       {/* Main Content */}
       <div className="flex-1 bg-secondary-0 rounded-xl shadow p-6">
-        <h1 className="text-xl font-bold text-center mb-4">{item.h3}</h1>
+        <h1 className="text-xl font-bold text-center mb-4">{item.title}</h1>
         <img
           src={item.image}
-          alt={item.h3}
+          alt={item.title}
           className="w-full rounded-lg mx-auto mb-6 max-h-96 object-cover"
         />
         <div className="text-justify text-gray-700 leading-8 mb-6">
-          {item.p}
+          {<ServiceContent html={item.description} />}
         </div>
 
         <SocialIcons />

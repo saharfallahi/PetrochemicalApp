@@ -19,10 +19,10 @@ function Cards({ items, type }) {
               </div>
               <div>
                 <h3 className="text-secondary-800 text-base md:text-lg font-bold mb-2">
-                  {item.h3}
+                  {item.title}
                 </h3>
                 <p className="text-sm md:text-base text-secondary-600 truncate">
-                  {item.p}
+                  {item.shortDesc}
                 </p>
               </div>
               <div className="flex items-center justify-center">

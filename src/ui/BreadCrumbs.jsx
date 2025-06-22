@@ -2,13 +2,15 @@ import { IoIosArrowBack } from "react-icons/io";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { usePosts } from "../context/PostsProvider";
 import { useItems } from "../context/ItemsProvider";
+import { useNews } from "../context/NewsProvider";
 
 export default function Breadcrumbs({ links = [] }) {
   const location = useLocation();
-  const { postId, productId, serviceId } = useParams();
+  const { postId, productId, serviceId, newsId } = useParams();
   const { getPostById } = usePosts();
   const currentPath = location.pathname;
   const { getItemById } = useItems();
+  const { getNewsById } = useNews();
 
   // Find the matching link for current path
   const findMatchingLink = (path) => {
@@ -68,7 +70,7 @@ export default function Breadcrumbs({ links = [] }) {
           const product = getItemById(productId, "products");
           if (product) {
             breadcrumbs.push({
-              name: product.h3,
+              name: product.title,
               to: currentPathBuilder + `/${productId}`,
               active: true,
             });
@@ -88,8 +90,28 @@ export default function Breadcrumbs({ links = [] }) {
           const service = getItemById(serviceId, "services");
           if (service) {
             breadcrumbs.push({
-              name: service.h3,
+              name: service.title,
               to: currentPathBuilder + `/${serviceId}`,
+              active: true,
+            });
+          }
+        }
+        // If we're on a product page and this is the products segment
+        else if (
+          segment === "news" &&
+          newsId &&
+          pathSegments[index + 1] === newsId
+        ) {
+          breadcrumbs.push({
+            ...matchingLink,
+            active: false,
+          });
+          // Add the product title as the next breadcrumb
+          const news = getNewsById(newsId, "news");
+          if (news) {
+            breadcrumbs.push({
+              name: news.title,
+              to: currentPathBuilder + `/${newsId}`,
               active: true,
             });
           }

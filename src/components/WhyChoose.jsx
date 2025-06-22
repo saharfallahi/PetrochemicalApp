@@ -24,27 +24,27 @@ function WhyChoose() {
             پتروشیمی ایران زمین، تلفیق زیبای علم و صنعت ایرانی
           </h2>
           <p className="text-sm md:text-base text-secondary-700 mb-6">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-            استفاده از طراحان گرافیک است...
+            پیشرو در صنعت پتروشیمی کشور، با تکیه بر تخصص فنی، تجربه عملیاتی و
+            بهره‌گیری از استانداردهای روز دنیا، فعالیت خود را با اهداف زیر ادامه می دهد 
           </p>
           <ul className="mb-8 space-y-2 text-sm md:text-base">
             <li className="flex items-center gap-2 text-secondary-700">
               <span className="bg-orange-100 text-orange-500 rounded-full w-5 h-5 md:w-6 md:h-6 flex items-center justify-center">
                 ✔
               </span>
-              لورم ایپسوم متن ساختگی با تولید سادگی
+              ارتقاء کیفیت
             </li>
             <li className="flex items-center gap-2 text-secondary-700">
               <span className="bg-orange-100 text-orange-500 rounded-full w-5 h-5 md:w-6 md:h-6 flex items-center justify-center">
                 ✔
               </span>
-              لورم ایپسوم متن ساختگی با تولید سادگی
+              افزایش بهره‌وری
             </li>
             <li className="flex items-center gap-2 text-secondary-700">
               <span className="bg-orange-100 text-orange-500 rounded-full w-5 h-5 md:w-6 md:h-6 flex items-center justify-center">
                 ✔
               </span>
-              لورم ایپسوم متن ساختگی با تولید سادگی
+              توسعه پایدار
             </li>
           </ul>
           <div className="flex gap-4">

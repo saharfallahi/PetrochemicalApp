@@ -2,9 +2,10 @@ import Breadcrumbs from "./BreadCrumbs";
 
 const links = [
   { name: "صفحه اصلی", to: "/" },
-  { name: "وبلاگ", to: "/posts" },
   { name: "محصولات", to: "/products" },
   { name: "خدمات", to: "/services" },
+  { name: "اخبار", to: "/news" },
+  { name: "وبلاگ", to: "/posts" },
   { name: "درباره ما", to: "/about" },
   { name: "تماس با ما", to: "/contact" },
 ];

@@ -13,13 +13,13 @@ function OtherItems({ otherItems, type }) {
             <div className="w-12 h-12 flex-shrink-0">
               <img
                 src={otherItem.icon || otherItem.image}
-                alt={otherItem.h3}
+                alt={otherItem.title}
                 className="w-full h-full object-cover rounded-lg"
               />
             </div>
             <div className="flex-1">
               <h4 className="text-sm font-bold group-hover:text-primary-900 transition-colors line-clamp-2">
-                {otherItem.h3}
+                {otherItem.title}
               </h4>
             </div>
           </div>

@@ -7,6 +7,7 @@ import LoadingSpinner from "../ui/LoadingSpinner";
 import CommentForm from "../ui/CommentForm";
 import SearchBar from "../ui/SearchBar";
 import SocialIcons from "../ui/SocialIcons";
+import ServiceContent from "../ui/ServiceContent";
 
 export default function SinglePost() {
   const { postId } = useParams();
@@ -45,7 +46,7 @@ export default function SinglePost() {
           className="w-full rounded-lg mx-auto mb-6 max-h-96 object-cover"
         />
         <div className="text-justify text-gray-700 leading-8 mb-6">
-          {post.description}
+        {<ServiceContent html={post.description} />}
         </div>
         <div className="flex items-center justify-between text-xs text-secondary-400 mt-4">
           <span>مدیر سایت</span>

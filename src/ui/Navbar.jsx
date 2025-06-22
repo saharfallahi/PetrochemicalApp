@@ -7,9 +7,10 @@ import { useLocation } from "react-router-dom";
 
 const links = [
   { name: "صفحه اصلی", to: "/" },
-  { name: "وبلاگ", to: "/posts" },
   { name: "محصولات", to: "/products" },
   { name: "خدمات", to: "/services" },
+  { name: "اخبار", to: "/news" },
+  { name: "وبلاگ", to: "/posts" },
   { name: "درباره ما", to: "/about" },
   { name: "تماس با ما", to: "/contact" },
 ];
@@ -53,7 +54,7 @@ function Navbar() {
   useEffect(() => {
     const cleanup = setupObserver();
     return cleanup;
-  }, [setupObserver,location.pathname]);
+  }, [setupObserver, location.pathname]);
 
   return (
     <nav
@@ -127,7 +128,7 @@ function Navbar() {
       >
         <div className="px-2 pt-4 pb-3 space-y-2 sm:px-3 text-sm md:text-base text-secondary-600 ">
           {links.map((link) => (
-            <CustomNavlink key={link.name} to={link.to}>
+            <CustomNavlink key={link.name} to={link.to} onClick={() => setIsOpen(false)}>
               {link.name}
             </CustomNavlink>
           ))}

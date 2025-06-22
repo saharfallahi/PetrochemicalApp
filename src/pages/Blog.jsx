@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import LoadingSpinner from "../ui/LoadingSpinner";
 import { usePosts } from "../context/PostsProvider";
+import ServiceContent from "../ui/ServiceContent";
 
 function Blog() {
   const { isLoading, posts } = usePosts();
@@ -29,7 +30,7 @@ function Blog() {
             <div className="p-4">
               <h3 className="text-lg font-bold mb-2">{post.title}</h3>
               <p className="text-sm text-secondary-500 mb-3 truncate">
-                {post.description}
+              {<ServiceContent html={post.shortDesc} />}
               </p>
               <div className="flex justify-between items-center">
                 <span className="text-xs text-primary-900">{post.date}</span>
