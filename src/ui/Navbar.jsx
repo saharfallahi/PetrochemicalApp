@@ -1,9 +1,9 @@
 import { useState, useRef, useCallback } from "react";
 import CustomNavlink from "./CustomNavlink";
-import useOutsideClick from "../hooks/useOutsideClick";
 import Topbar from "./Topbar";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import useOutsideClick from "../hooks/useOutsideClick";
 
 const links = [
   { name: "صفحه اصلی", to: "/" },
@@ -113,7 +113,7 @@ function Navbar() {
           <span className="md:text-lg lg:text-xl text-white font-bold whitespace-nowrap">
             پتروشیمی ایران زمین
           </span>
-          <img src="/gas-icon.png" alt="Logo" className="h-10 mr-2" />
+          <img src="/gas-icon-100.png" alt="Logo" className="h-10 mr-2" />
         </div>
       </div>
       <div

@@ -6,22 +6,22 @@ const teamMembers = [
   {
     name: "مهندس ملکی",
     title: "کارشناس ارشد نفت",
-    image: "/woman1.jpg", // Replace with your image paths
+    image: "/woman1-500.gif", // Replace with your image paths
   },
   {
     name: "مهندس کمالی",
     title: "کارشناس ارشد بازرگانی",
-    image: "/woman2.jpg",
+    image: "/woman2-500.gif",
   },
   {
     name: "مهندس بزرگی",
     title: "مدیر امور مالی",
-    image: "/man1.jpg",
+    image: "/man1-500.gif",
   },
   {
     name: "مهندس کاظمی",
     title: "سرپرست واحد صنعت",
-    image: "/man2.jpg",
+    image: "/man2-1000.gif",
   },
 ];
 

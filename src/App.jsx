@@ -14,6 +14,7 @@ import Services from "./pages/Services";
 import News from "./pages/News";
 import { NewsProvider } from "./context/NewsProvider";
 import SingleNews from "./pages/SingleNews";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
                 <Route path="/services/:serviceId" element={<SingleItem />} />
                 <Route path="/news" element={<News />} />
                 <Route path="/news/:newsId" element={<SingleNews/>} />
+                <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>
           </NewsProvider>

@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 
 const heroImages = [
   {
-    src: "./petro-sunrise.jpg",
+    src: "./petro-sunrise-2000.jpg",
     alt: "Petrochemical Sunrise",
   },
   {
-    src: "./manandpetro.jpg",
+    src: "./manandpetro-2000.jpg",
     alt: "Petrochemical Plant",
   },
   {
-    src: "./purplepetro.jpg",
+    src: "./purplepetro-2000.jpg",
     alt: "Petrochemical Night View",
   },
 ];

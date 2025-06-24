@@ -12,7 +12,7 @@ function Cards({ items, type }) {
             >
               <div className="text-primary-900">
                 <img
-                  src={item.icon || "/gas-icon.png"}
+                  src={item.icon || "/gas-icon-100.png"}
                   alt="icon"
                   className=" w-16 h-16 hover:rotate-[360deg] transition-all duration-300"
                 />

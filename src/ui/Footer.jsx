@@ -17,7 +17,7 @@ function Footer() {
         />
         <div className="container text-secondary-100 flex flex-col md:flex-row pt-10 pb-16  gap-x-16 gap-y-8">
           <div className="w-full md:w-1/3 flex flex-col gap-y-4">
-            <img className="w-20 h-20" src="/gas-icon.png" alt="logo" />
+            <img className="w-20 h-20" src="/gas-icon-100.png" alt="logo" />
             <div className="text-sm">
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
               استفاده از طراحان گرافیک است

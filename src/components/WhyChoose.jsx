@@ -8,7 +8,7 @@ function WhyChoose() {
       <div className="container pt-20 pb-20 h-full flex flex-col gap-y-8 md:flex-row items-center justify-between">
         <div className="md:w-2/5 ">
           <img
-            src="./three-images.png"
+            src="./three-images-600.png"
             alt="cropimages"
             className="w-full h-full  hover:-translate-y-4 transition-all duration-300"
           />
