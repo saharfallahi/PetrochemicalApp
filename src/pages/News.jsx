@@ -28,7 +28,7 @@ function News() {
               className="w-full h-40 object-cover object-top"
             />
             <div className="p-4">
-              <h3 className="text-lg font-bold mb-2 truncate">{n.title}</h3>
+              <h3 className="text-base md:text-lg font-bold mb-2 truncate">{n.title}</h3>
               <p className="text-sm text-secondary-500 mb-3 truncate">
                 {<ServiceContent html={n.shortDesc} />}
               </p>

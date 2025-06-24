@@ -40,7 +40,7 @@ export default function SingleNews() {
 
       {/* Main Content */}
       <div className="flex-1 bg-secondary-0 rounded-xl shadow p-6">
-        <h1 className="text-xl font-bold text-center mb-4">{news.title}</h1>
+        <h1 className="text-lg md:text-xl font-bold text-center mb-4">{news.title}</h1>
         <img
           src={news.image}
           alt={news.title}

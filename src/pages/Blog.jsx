@@ -28,7 +28,7 @@ function Blog() {
               className="w-full h-40 object-cover"
             />
             <div className="p-4">
-              <h3 className="text-lg font-bold mb-2">{post.title}</h3>
+              <h3 className="text-base md:text-lg font-bold mb-2">{post.title}</h3>
               <p className="text-sm text-secondary-500 mb-3 truncate">
               {<ServiceContent html={post.shortDesc} />}
               </p>
