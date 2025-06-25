@@ -14,7 +14,7 @@ The Petrochemical Application Project is a Industrial Application for petrochemi
 
 ## Logo
 
-![gas-icon](https://github.com/user-attachments/assets/845ea31e-deaa-47a3-9253-70f7d17703ef)
+![gas-icon-100](https://github.com/user-attachments/assets/736b67f7-b042-40b3-a0b6-0fa6a263862f)
 
 ## Demo
 
