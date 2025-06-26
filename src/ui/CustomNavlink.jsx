@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 function CustomNavlink({ children, to, onClick }) {
   const navlinkClass =
-    "flex items-center gap-x-2 text-sm md:text-base whitespace-nowrap hover:text-primary-900 px-2 py-1.5 rounded-lg  transition-all duration-300";
+    "flex items-center gap-x-2 text-sm md:text-base whitespace-nowrap hover:text-primary-900 px-2 py-1.5 transition-all duration-300";
 
   return (
     <li>

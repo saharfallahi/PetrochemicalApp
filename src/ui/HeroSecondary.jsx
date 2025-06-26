@@ -26,7 +26,7 @@ function HeroSecondary({ pathname }) {
           <h1 className=" text-2xl md:text-4xl lg:text-6xl font-bold">
             {links.find((link) => link.to === pathname)?.name}
           </h1>
-          <div className="absolute bg-primary-900 px-4 py-1  rounded-lg  bottom-0 left-1/2 -translate-x-1/2 flex  justify-center items-center">
+          <div className="absolute bg-primary-900 px-4 py-1  rounded-md  bottom-0 left-1/2 -translate-x-1/2 flex  justify-center items-center">
             <Breadcrumbs links={links} />
           </div>
         </div>

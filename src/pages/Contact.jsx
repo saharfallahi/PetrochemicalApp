@@ -33,7 +33,7 @@ export default function Contact() {
         {offices.map((office, idx) => (
           <div
             key={idx}
-            className="bg-secondary-100 rounded-xl shadow p-6 flex flex-col"
+            className="bg-secondary-0 rounded-md border border-secondary-100 shadow-md p-6 flex flex-col"
           >
             <h3 className="font-bold text-lg mb-2 text-right">
               {office.title} :

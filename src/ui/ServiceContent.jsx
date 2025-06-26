@@ -1,6 +1,6 @@
 
-function ServiceContent({ html }) {
-    return <div dangerouslySetInnerHTML={{ __html: html }} className="text-sm md:text-base leading-6 md:leading-8"/>;
+function ServiceContent({ html,className }) {
+    return <div dangerouslySetInnerHTML={{ __html: html }} className={className}/>;
   }
 
 export default ServiceContent

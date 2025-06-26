@@ -1,7 +1,7 @@
 
 function Map() {
   return (
-    <div className="col-span-1 md:col-span-1 w-full rounded-xl overflow-hidden shadow h-full">
+    <div className="w-full rounded-md overflow-hidden shadow h-full">
       <iframe
         title="map"
         src="https://www.google.com/maps?q=تهران،%20جردن&output=embed"

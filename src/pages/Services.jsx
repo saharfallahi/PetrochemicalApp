@@ -1,9 +1,7 @@
-import ServicesCard from '../components/ServicesCard'
+import ServicesCard from "../components/ServicesCard";
 
 function Services() {
-  return (
-  <ServicesCard/>
-  )
+  return <ServicesCard />;
 }
 
-export default Services
+export default Services;

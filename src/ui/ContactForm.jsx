@@ -1,71 +1,96 @@
-import { useState } from "react";
+import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
 function ContactForm() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [message, setMessage] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
 
-  const formHandler = (e) => {
-    e.preventDefault();
-    const ContactMessage = {
-      name,
-      email,
-      phoneNumber,
-      message,
-    };
-    console.log(ContactMessage);
-    setName("");
-    setEmail("");
-    setPhoneNumber("");
-    setMessage("");
+  const onSubmit = (data) => {
+    console.log(data);
+    toast.success("فرم تماس شما با موفقیت ثبت شد");
+    reset();
   };
 
   return (
-    <form className="bg-secondary-0 rounded-xl shadow p-6 col-span-1 md:col-span-1 flex flex-col h-full">
+    <form
+      className="bg-secondary-0 rounded-md shadow p-6 flex flex-col h-full"
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <h2 className="font-bold text-xl mb-4 text-right">
         برای دریافت مشاوره با ما در تماس باشید
       </h2>
       <div className="mb-3">
         <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          {...register("name", {
+            required: "نام و نام خانوادگی ضروری است",
+            maxLength: 20,
+          })}
           type="text"
           placeholder="نام و نام خانوادگی :"
           className="w-full textField__input"
         />
+        {errors.name && (
+          <span className="text-error block text-sm mt-2 ">
+            {errors.name?.message}
+          </span>
+        )}
       </div>
-      <div className="mb-3 flex gap-2">
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-          placeholder="ایمیل :"
-          className="w-1/2 textField__input"
-        />
-        <input
-          value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
-          type="text"
-          placeholder="شماره تماس :"
-          className="w-1/2 textField__input"
-        />
+      <div className="mb-3 flex gap-x-2">
+        <div className="w-1/2 flex flex-col ">
+          <input
+            {...register("email", {
+              required: "ایمیل ضروری است",
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: "ایمیل نامعتبر است",
+              },
+            })}
+            type="email"
+            placeholder="ایمیل :"
+            className="w-full textField__input"
+          />
+          {errors.email && (
+            <span className="text-error block text-sm mt-2 ">
+              {errors.email?.message}
+            </span>
+          )}
+        </div>
+
+        <div className="w-1/2 flex flex-col ">
+          <input
+            {...register("number", {
+              required: "شماره تماس ضروری است",
+              maxLength: 11,
+            })}
+            type="text"
+            placeholder="شماره تماس :"
+            className="w-full textField__input"
+          />
+          {errors.number && (
+            <span className="text-error block text-sm mt-2 ">
+              {errors.number?.message}
+            </span>
+          )}
+        </div>
       </div>
       <div className="mb-3">
         <textarea
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          {...register("comment", { required: "متن پیام ضروری است" })}
           placeholder="متن پیام"
           className="w-full textField__input h-24 resize-none"
         />
+        {errors.comment && (
+          <span className="text-error block text-sm mt-2 ">
+            {errors.comment?.message}
+          </span>
+        )}
       </div>
       <div>
-        <button
-          onClick={formHandler}
-          type="submit"
-          className="btn btn--primary btn--outline "
-        >
+        <button type="submit" className="btn btn--primary btn--outline ">
           ارسال پیام
         </button>
       </div>

@@ -18,9 +18,12 @@ function Footer() {
         <div className="container text-secondary-100 flex flex-col md:flex-row pt-10 pb-16  gap-x-16 gap-y-8">
           <div className="w-full md:w-1/3 flex flex-col gap-y-4">
             <img className="w-20 h-20" src="/gas-icon-100.png" alt="logo" />
-            <div className="text-sm">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-              استفاده از طراحان گرافیک است
+            <div className="text-sm leading-6">
+              <p>
+                <strong>شرکت پتروشیمی ایران زمین</strong> به‌عنوان یکی از
+                مجموعه‌های پیشرو در صنعت پتروشیمی کشور، با تکیه بر تخصص فنی،
+                تجربه عملیاتی و بهره‌گیری از استانداردهای روز دنیا، فعالیت خود را با قدرت ادامه می دهد
+              </p>
             </div>
             <div className="flex gap-x-2">
               <a href="#" className="bg-secondary-100 icon-container">

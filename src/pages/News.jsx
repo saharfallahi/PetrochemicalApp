@@ -2,9 +2,14 @@ import { Link } from "react-router-dom";
 import LoadingSpinner from "../ui/LoadingSpinner";
 import ServiceContent from "../ui/ServiceContent";
 import { useNews } from "../context/NewsProvider";
+import { useState } from "react";
+import SearchBar from "../ui/SearchBar";
 
 function News() {
   const { news, isLoading } = useNews();
+  const [search, setSearch] = useState("");
+  const filteredNews = news.filter((n) => n.title.includes(search));
+  const displayNews = filteredNews || news;
 
   if (isLoading) {
     return (
@@ -16,11 +21,12 @@ function News() {
 
   return (
     <div className="container section">
+       <SearchBar value={search} onChange={(e) => setSearch(e.target.value)}/>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {news.map((n) => (
+        {displayNews.map((n) => (
           <div
             key={n.id}
-            className="w-full border border-gray-200 rounded-xl overflow-hidden bg-secondary-0 shadow-md flex flex-col"
+            className="w-full border border-gray-200 rounded-md overflow-hidden bg-secondary-0 shadow-md flex flex-col"
           >
             <img
               src={n.image}
