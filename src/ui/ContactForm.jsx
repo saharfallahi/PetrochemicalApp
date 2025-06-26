@@ -17,7 +17,7 @@ function ContactForm() {
 
   return (
     <form
-      className="bg-secondary-0 rounded-md shadow p-6 flex flex-col h-full"
+      className="bg-secondary-0 rounded-md border border-secondary-100 shadow-md p-6 flex flex-col h-full"
       onSubmit={handleSubmit(onSubmit)}
     >
       <h2 className="font-bold text-xl mb-4 text-right">

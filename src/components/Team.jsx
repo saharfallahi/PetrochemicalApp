@@ -1,5 +1,4 @@
-import React from "react";
-import { FaShareAlt } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import HeadSection from "../ui/HeadSection";
 
 const teamMembers = [
@@ -54,7 +53,7 @@ function Team() {
                 <span className="text-sm lg:text-base text-secondary-500">{member.title}</span>
               </div>
               <a href="#" className="block">
-                <FaShareAlt className="w-6 h-6 text-primary-900" />
+                <FaLinkedin className="w-6 h-6 lg:w-7 lg:h-7 text-primary-900" />
               </a>
             </div>
           </div>
