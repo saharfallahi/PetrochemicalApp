@@ -85,8 +85,8 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="bg-secondary-900 text-center p-2 text-secondary-100 text-sm">
-        <p>تمام حقوق این سایت متعلق به مهندس سحر فلاحی می باشد.</p>
+      <div className="bg-secondary-900 text-center p-2 text-secondary-100">
+        <small>&copy; تمام حقوق این سایت متعلق به مهندس سحر فلاحی می باشد.</small>
       </div>
     </div>
   );

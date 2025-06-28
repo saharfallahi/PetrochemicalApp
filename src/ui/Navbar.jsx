@@ -110,9 +110,9 @@ function Navbar() {
         </div>
 
         <div className="flex items-center">
-          <span className="md:text-lg lg:text-xl text-white font-bold whitespace-nowrap">
+          <h1 className="md:text-lg lg:text-xl text-white font-bold whitespace-nowrap">
             پتروشیمی ایران زمین
-          </span>
+          </h1>
           <img src="/gas-icon-100.png" alt="Logo" className="h-10 mr-2" />
         </div>
       </div>

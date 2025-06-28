@@ -3,6 +3,7 @@ import useFetch from "../hooks/useFetch";
 
 const NewsContext = createContext();
 const BASE_URL = "https://geode-wary-pump.glitch.me";
+
 // const BASE_URL= "http://localhost:5000";
 
 function NewsProvider({ children }) {
