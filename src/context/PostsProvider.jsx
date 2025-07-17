@@ -2,7 +2,7 @@ import { createContext, useContext, useMemo } from "react";
 import useFetch from "../hooks/useFetch";
 
 const PostsContext = createContext();
-const BASE_URL = "https://geode-wary-pump.glitch.me";
+const BASE_URL = "https://petrochemicalapp-json-server.onrender.com";
 
 // const BASE_URL= "http://localhost:5000";
 
