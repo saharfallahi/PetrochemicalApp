@@ -1,8 +1,17 @@
 import { useItems } from "../context/ItemsProvider";
 import Cards from "../ui/Cards";
+import LoadingSpinner from "../ui/LoadingSpinner";
 
 function ServicesCard() {
-  const { services } = useItems();
+  const { services,isLoading } = useItems();
+
+   if (isLoading) {
+    return (
+      <div className="container section flex justify-center items-center min-h-[50vh]">
+        <LoadingSpinner />
+      </div>
+    );
+  }
   return (
     <div className="section">
       <Cards items={services} type="services" />
