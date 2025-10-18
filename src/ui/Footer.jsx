@@ -3,7 +3,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaFacebookF, FaLocationDot } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
 import { RiInstagramFill } from "react-icons/ri";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import RecentPosts from "./RecentPosts";
 
 function Footer() {
