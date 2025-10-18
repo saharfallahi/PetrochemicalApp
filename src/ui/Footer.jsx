@@ -86,7 +86,7 @@ function Footer() {
         </div>
       </div>
       <div className="bg-secondary-900 text-center p-2 text-secondary-100">
-        <small>&copy; تمام حقوق این سایت متعلق به <Link to="https://www.sahar-fallahi.ir/"><span className="font-semibold text-primary-900">مهندس سحر فلاحی</span></Link> می باشد.</small>
+        <small>&copy; تمام حقوق این سایت متعلق به <a to="https://www.sahar-fallahi.ir/" target="_blank"><span className="font-semibold text-primary-900">مهندس سحر فلاحی</span></a> می باشد.</small>
       </div>
     </div>
   );
